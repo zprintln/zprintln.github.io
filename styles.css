@@ -101,6 +101,11 @@ main {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 }
+.portfolio-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
 
 .portfolio-item {
     text-align: center;
@@ -331,8 +336,8 @@ main {
 
 /* Footer */
 footer {
-    background-color: #333;
-    color: #fff;
+    background-color: #d2d2d7;
+    color: #616161;
     text-align: center;
     padding: 1rem 2rem;
 }
@@ -373,4 +378,20 @@ footer .bi {
 
 footer .bi:hover {
     color: #007bff; /* Change to your desired hover color */
+}
+button {
+    font-size: 14px; /* Adjusted for better readability */
+    background-color: #f5f5f7; /* Light gray background similar to Apple's design */
+    border: 1px solid #d2d2d7; /* Subtle border to define the button's edges */
+    border-radius: 12px; /* Rounded corners for a modern look */
+    padding: 10px 20px; /* Adequate padding for touch targets */
+    color: #1d1d1f; /* Dark gray text color */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* System font stack for consistency across platforms */
+    cursor: pointer; /* Pointer cursor to indicate interactivity */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for hover effects */
+}
+
+button:hover {
+    background-color: #e5e5e7; /* Slightly darker background on hover */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12); /* Subtle shadow for depth on hover */
 }
