@@ -334,3 +334,209 @@ button:hover {
     text-align: left;
 }
 
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dynamic Header Styling */
+.dynamic-header {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* Logo Styling */
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #007aff;
+    color: #fff;
+    border-radius: 50%;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 20px;
+    transition: background-color 0.3s;
+}
+
+/* Navigation Styling */
+.navigation {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navigation a:hover {
+    color: #007aff;
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 20px;
+    font-size: 1.2rem;
+    color: #333;
+    transition: color 0.3s;
+}
+
+#theme-toggle:hover {
+    color: #007aff;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #1c1c1e;
+    color: #f2f2f7;
+}
+
+body.dark-mode .dynamic-header {
+    background-color: rgba(28, 28, 30, 0.8);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .logo {
+    background-color: #0a84ff;
+}
+
+body.dark-mode .navigation a {
+    color: #f2f2f7;
+}
+
+body.dark-mode .navigation a:hover {
+    color: #0a84ff;
+}
+
+body.dark-mode #theme-toggle {
+    color: #f2f2f7;
+}
+
+body.dark-mode #theme-toggle:hover {
+    color: #0a84ff;
+}
+:host {
+    display: block;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    background-color: var(--header-bg-color);
+    border-radius: 30px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--logo-bg-color);
+    color: var(--logo-text-color);
+    border-radius: 50%;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-right: 20px;
+    transition: background-color 0.3s;
+}
+
+.navigation {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: var(--nav-link-color);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navigation a:hover {
+    color: var(--nav-link-hover-color);
+}
+
+#theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 20px;
+    font-size: 1.2rem;
+    color: var(--theme-toggle-color);
+    transition: color 0.3s;
+}
+
+#theme-toggle:hover {
+    color: var(--theme-toggle-hover-color);
+}
+:root {
+    --header-bg-color: rgba(255, 255, 255, 0.8);
+    --logo-bg-color: #007aff;
+    --logo-text-color: #ffffff;
+    --nav-link-color: #1d1d1f;
+    --nav-link-hover-color: #007aff;
+    --theme-toggle-color: #1d1d1f;
+    --theme-toggle-hover-color: #007aff;
+    --background-color: #ffffff;
+    --text-color: #1d1d1f;
+}
+
+[data-theme='dark'] {
+    --header-bg-color: rgba(28, 28, 30, 0.8);
+    --logo-bg-color: #0a84ff;
+    --logo-text-color: #ffffff;
+    --nav-link-color: #f2f2f7;
+    --nav-link-hover-color: #0a84ff;
+    --theme-toggle-color: #f2f2f7;
+    --theme-toggle-hover-color: #0a84ff;
+    --background-color: #1c1c1e;
+    --text-color: #f2f2f7;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
