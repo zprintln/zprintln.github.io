@@ -1,10 +1,10 @@
-
 .draggable {
     position: absolute;
     cursor: grab;
     user-select: none;
     z-index: 10;
-    
+    width: 100px;
+    height: 100px;
 }
 .draggable:active {
     cursor: grabbing;

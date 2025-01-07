@@ -1,31 +1,40 @@
 document.addEventListener('DOMContentLoaded', () => {
     const draggables = document.querySelectorAll('.draggable');
-    let activeElement = null;
-    let offsetX = 0;
-    let offsetY = 0;
 
     draggables.forEach(draggable => {
+        // Load saved positions from localStorage
+        const savedPosition = localStorage.getItem(draggable.id);
+        if (savedPosition) {
+            const { left, top } = JSON.parse(savedPosition);
+            draggable.style.left = `${left}px`;
+            draggable.style.top = `${top}px`;
+        }
+
         draggable.addEventListener('mousedown', (e) => {
-            activeElement = e.target;
-            offsetX = e.clientX - activeElement.getBoundingClientRect().left;
-            offsetY = e.clientY - activeElement.getBoundingClientRect().top;
-            activeElement.style.zIndex = 1000;
+            const offsetX = e.clientX - draggable.getBoundingClientRect().left;
+            const offsetY = e.clientY - draggable.getBoundingClientRect().top;
+
+            function onMouseMove(e) {
+                const left = e.clientX - offsetX;
+                const top = e.clientY - offsetY;
+                draggable.style.left = `${left}px`;
+                draggable.style.top = `${top}px`;
+            }
+
+            function onMouseUp() {
+                // Save the current position to localStorage
+                const position = {
+                    left: parseInt(draggable.style.left, 10),
+                    top: parseInt(draggable.style.top, 10)
+                };
+                localStorage.setItem(draggable.id, JSON.stringify(position));
+
+                document.removeEventListener('mousemove', onMouseMove);
+                document.removeEventListener('mouseup', onMouseUp);
+            }
+
+            document.addEventListener('mousemove', onMouseMove);
+            document.addEventListener('mouseup', onMouseUp);
         });
     });
-
-    document.addEventListener('mousemove', (e) => {
-        if (activeElement) {
-            activeElement.style.left = `${e.clientX - offsetX}px`;
-            activeElement.style.top = `${e.clientY - offsetY}px`;
-        }
-    });
-
-    document.addEventListener('mouseup', () => {
-        if (activeElement) {
-            activeElement.style.zIndex = 10;
-            activeElement = null;
-        }
-    });
-
-    // Implement additional functionalities as needed
 });
