@@ -31,20 +31,13 @@ class FooterComponent extends HTMLElement {
                 }
             </style>
             <footer>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/zadie-moon/" target="_blank" aria-label="LinkedIn">
-                        <i class="bi bi-linkedin"></i>
-                    </a>
-                    <a href="mailto:zadiemoon.println@gmail.com" aria-label="Email">
-                        <i class="bi bi-envelope"></i>
-                    </a>
-                    <a href="https://www.youtube.com/channel/zadiemoon" target="_blank" aria-label="YouTube">
-                        <i class="bi bi-youtube"></i>
-                    </a>
-                    <a href="https://github.com/zprintln/" target="_blank" aria-label="GitHub">
-                        <i class="bi bi-github"></i>
-                    </a>
-                </div>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/zadie-moon/"><i class="bi bi-linkedin"></i></a>
+                <a href="https://github.com/zprintln"><i class="bi bi-github"></i></a>
+                <a href="mailto:zadiemoon.println@gmail.com"><i class="bi bi-envelope-at"></i></a>
+                <a href="https://www.instagram.com/moon.zadie/"><i class="bi bi-instagram"></i></a>
+        
+            </div>
                 <p>&copy; 2024 Zadie Moon. All rights reserved.</p>
             </footer>
         `;
